@@ -1,36 +1,21 @@
-function Drawer() {
+function Drawer({onClose, items = []}) {
     return(
-        <div style={{display: "none"}} className="overlay">
+        <div  className="overlay">
         <div className="drawer">
-            <h2>My Cart <img className="removeBtn" src="/img/btn-remove.svg" alt="Remove"/></h2>
+            <h2>My Cart <img className="removeBtn"  onClick={onClose} src="/img/btn-remove.svg" alt="Remove"/></h2>
             <div className="list">
-                <div className="cartItem">
-                    <img width={100} height={70} src="/img/sneakers/1.jpeg" alt="Sneakers"/>
-                    <div>
-                        <p>New Balance 574</p>
-                        <b>12500$</b>
-                    </div>
-                    <img className="removeBtn" src="/img/btn-remove.svg" alt="Remove"/>
-                </div>
+                {items.map((obj) => (
+                    <div className="cartItem"   key={obj.imageURL}>
 
-                <div className="cartItem">
-                    <img width={100} height={70} src="/img/sneakers/1.jpeg" alt="Sneakers"/>
-                    <div>
-                        <p>New Balance 574</p>
-                        <b>12500$</b>
-                    </div>
-                    <img className="removeBtn" src="/img/btn-remove.svg" alt="Remove"/>
-                </div>
+                        <img width={100} height={70} src={obj.imageURL} alt="Sneakers"/>
 
-                <div className="cartItem">
-                    <img width={100} height={70} src="/img/sneakers/1.jpeg" alt="Sneakers"/>
-                    <div>
-                        <p>New Balance 574</p>
-                        <b>12500$</b>
+                        <div>
+                            <p>{obj.name}</p>
+                            <b>{obj.price}$</b>
+                        </div>
+                        <img className="removeBtn" src="/img/btn-remove.svg" alt="Remove"/>
                     </div>
-                    <img className="removeBtn" src="/img/btn-remove.svg" alt="Remove"/>
-                </div>
-
+                ))}
             </div>
 
             <ul>

@@ -52,9 +52,10 @@ body {
 
   .sneakers{
     display: flex;
+    flex-wrap: wrap;
   }
 
-  .card{
+  /*.card{
     border: 1px solid #f8f8f8;
     width: 210px;
     padding: 20px;
@@ -94,7 +95,7 @@ body {
       width: 32px;
       cursor: pointer;
     }
-  }
+  }*/
 
   li {
     list-style-type: none;
@@ -185,6 +186,7 @@ body {
   img{
     margin-right: 10px;
     background-color: #f3f3f3;
+
   }
   p{
     margin-bottom: 5px;
@@ -225,6 +227,7 @@ header {
   .headerRight {
     display: flex;
     align-items: center;
+    cursor: pointer;
 
     span{
       margin-left: 15px;

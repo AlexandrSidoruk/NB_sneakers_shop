@@ -1,6 +1,6 @@
 
 
-function Card() {
+function Card(props) {
     return(
         <div className="card">
             <div className="favorite">
@@ -8,12 +8,12 @@ function Card() {
 
             </div>
 
-            <img width={200} src="/img/sneakers/1.jpeg" alt="Sneakers"/>
-            <p> New Balance 574 </p>
+            <img width={200} src={props.imageURL}alt="Sneakers"/>
+            <p> {props.name} </p>
             <div className="cardButton">
                 <div className="price">
                     <span>Price:</span>
-                    <b>12500 usd</b>
+                    <b>{props.price} usd</b>
                 </div>
                 <button className="button">
                     <img width={15} height={15} src="/img/plus.svg" alt="Plus"/>
